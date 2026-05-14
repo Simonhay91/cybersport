@@ -1,0 +1,120 @@
+@import "tailwindcss";
+
+:root {
+  --bg-primary: #0d0d0d;
+  --bg-secondary: #111111;
+  --bg-tertiary: #1a1a1a;
+  --border-default: #222222;
+  --border-accent: #2a2a2a;
+  --accent-yellow: #c8ff00;
+  --accent-yellow-dark: #a8d400;
+  --accent-green: #39d353;
+  --accent-red: #e63946;
+  --accent-blue: #00c2ff;
+  --text-primary: #ffffff;
+  --text-secondary: #aaaaaa;
+  --text-muted: #666666;
+}
+
+@theme inline {
+  --color-bg-primary: var(--bg-primary);
+  --color-bg-secondary: var(--bg-secondary);
+  --color-bg-tertiary: var(--bg-tertiary);
+  --color-border-default: var(--border-default);
+  --color-border-accent: var(--border-accent);
+  --color-accent-yellow: var(--accent-yellow);
+  --color-accent-yellow-dark: var(--accent-yellow-dark);
+  --color-accent-green: var(--accent-green);
+  --color-accent-red: var(--accent-red);
+  --color-accent-blue: var(--accent-blue);
+  --color-text-primary: var(--text-primary);
+  --color-text-secondary: var(--text-secondary);
+  --color-text-muted: var(--text-muted);
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  font-family: var(--font-inter), 'Inter', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-rajdhani), 'Rajdhani', sans-serif;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg-secondary);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--border-accent);
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--text-muted);
+}
+
+/* Live dot animation */
+@keyframes pulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.5; transform: scale(1.4); }
+}
+.live-dot {
+  animation: pulse 1.5s infinite;
+}
+
+/* Glow effect for trophy */
+.trophy-glow {
+  filter: drop-shadow(0 0 40px rgba(200, 255, 0, 0.3));
+}
+
+/* Text gradient */
+.text-gradient {
+  background: linear-gradient(135deg, #c8ff00, #a8d400);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Footer social hover */
+.footer-social:hover {
+  color: var(--text-primary) !important;
+  border-color: var(--border-accent) !important;
+}
+
+/* Team card hover */
+.team-card:hover {
+  border-color: rgba(200, 255, 0, 0.5) !important;
+  transform: translateY(-2px);
+}
+
+/* Match card hover */
+.match-card:hover {
+  border-color: rgba(200, 255, 0, 0.3) !important;
+  transform: scale(1.01);
+}
+
+/* Generic yellow border hover */
+.hover-yellow-border:hover {
+  border-color: rgba(200, 255, 0, 0.4) !important;
+}
+
+/* Accent border hover (admin cards) */
+.hover-accent-border:hover {
+  border-color: var(--border-accent) !important;
+}

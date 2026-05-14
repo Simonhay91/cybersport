@@ -1,3 +1,4 @@
+export const dynamic = 'force-dynamic'
 import HeroSection from '@/components/home/HeroSection'
 import FormatSection from '@/components/home/FormatSection'
 import PrizeSection from '@/components/home/PrizeSection'

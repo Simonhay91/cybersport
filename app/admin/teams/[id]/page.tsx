@@ -1,3 +1,4 @@
+export const dynamic = 'force-dynamic'
 import connectDB from '@/lib/mongodb'
 import Team from '@/models/Team'
 import Tournament from '@/models/Tournament'

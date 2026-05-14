@@ -52,8 +52,8 @@ export default async function BracketPage({ params, searchParams }: { params: Pr
       bracket?: 'WB' | 'LB' | 'GF'
       scheduledAt?: string
     }>
-    first?: { _id: string }
-    second?: { _id: string }
+    first?: { _id: string; name: string; slug: string; logo?: string; tag: string }
+    second?: { _id: string; name: string; slug: string; logo?: string; tag: string }
   }>
   const groupsEnriched = groupsRaw.map(g => {
     const teamsWithForm = g.teams.map(team => {

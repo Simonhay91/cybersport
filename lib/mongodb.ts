@@ -1,11 +1,5 @@
 import mongoose from 'mongoose'
 
-const MONGODB_URI = process.env.MONGODB_URI as string
-
-if (!MONGODB_URI) {
-  throw new Error('MONGODB_URI не задан в переменных окружения')
-}
-
 interface MongooseCache {
   conn: typeof mongoose | null
   promise: Promise<typeof mongoose> | null
@@ -22,6 +16,11 @@ if (!global.mongoose) {
 }
 
 async function connectDB() {
+  const MONGODB_URI = process.env.MONGODB_URI
+  if (!MONGODB_URI) {
+    throw new Error('MONGODB_URI не задан в переменных окружения')
+  }
+
   if (cached.conn) return cached.conn
 
   if (!cached.promise) {
